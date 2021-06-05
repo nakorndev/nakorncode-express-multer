@@ -1,0 +1,10 @@
+extends layouts/default.pug
+
+block content
+  h1.title Hello users
+  .content
+    ul
+      each user in users
+        li
+          a(href=`/users/${user.id}`) (#{user.id}) #{user.name}
+        //- li= `(${user.id}) ${user.name}`

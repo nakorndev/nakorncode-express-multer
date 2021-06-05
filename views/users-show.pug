@@ -1,0 +1,15 @@
+extends layouts/default.pug
+
+block content
+  if user.avatar
+    img(src=user.avatar alt=user.name)
+  h1.title #{user.name}
+  .content
+    ul
+      li #[b ID:] #{user.id}
+      li #[b Age:] #{user.age}
+      li #[b Gender:&nbsp;]
+        span(style="text-transform: capitalize;") #{user.gender}
+      li #[b Salary:] #{Number(user.salary).toLocaleString()}
+      li
+        a(href=`/users/${user.id}/edit`) Edit this user
